@@ -1,0 +1,17 @@
+﻿@using MVC_CV.Models.Entity
+@model List<tbl_Certificates>
+
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Certificates</h2>
+    @foreach (var x in Model)
+    {
+        <ul class="fa-ul mb-0">
+            <li>
+                <span class="fa-li"><i class="fas fa-certificate text-warning"></i></span>
+                <a href="@x.Certificate" target="_blank">@x.Description</a> 
+            </li>
+
+        </ul>
+    }
+</div>

@@ -1,0 +1,46 @@
+﻿@model MVC_CV.Models.Entity.tbl_Certificates
+@{
+    ViewBag.Title = "UpdateCertificate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Update Certificate</h2>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form class="form-group" method="post">
+                                    @Html.Label("Name")
+                                    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Certificate Link")
+                                    @Html.TextBoxFor(x => x.Certificate, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Certificate Date")
+                                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                                    <br />
+
+                                    <button class="btn btn-success">Update</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+
+

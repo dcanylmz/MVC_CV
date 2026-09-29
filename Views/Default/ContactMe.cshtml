@@ -1,0 +1,23 @@
+﻿@using MVC_CV.Models.Entity
+@model List<tbl_Contact>
+
+<div class="resume-section-content">
+    <form method="post">
+        <h2 class="mb-5">Contact Me</h2>
+        <label>Name Surname:</label>
+        <input type="text" class="form-control" name="NameSurname" />
+        <br />
+        <label>Mail:</label>
+        <input type="email" class="form-control" name="Mail"/>
+        <br />
+        <label>Subject:</label>
+        <input type="text" class="form-control" name="Subject"/>
+        <br />
+        <label>Message:</label>
+        <textarea type="text" class="form-control" name="Message" rows="7"/></textarea>
+        <br />
+        
+        <button class="btn btn-outline-secondary">Send</button>
+
+    </form>
+</div>

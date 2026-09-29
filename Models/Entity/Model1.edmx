@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_CVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_About">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" />
+          <Property Name="Surname" Type="varchar" MaxLength="30" />
+          <Property Name="Adress" Type="varchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="Mail" Type="varchar" MaxLength="30" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Photo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_Certificates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Certificate" Type="varchar(max)" />
+          <Property Name="Date" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="tbl_Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" MaxLength="100" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Subtitle1" Type="varchar" MaxLength="100" />
+          <Property Name="Subtitle2" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="GNA" Type="varchar" MaxLength="10" />
+          <Property Name="Date" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_Experience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Subtitle" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Date" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Desc1" Type="varchar" MaxLength="500" />
+          <Property Name="Progress" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="tbl_Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Skills" Type="varchar" MaxLength="100" />
+          <Property Name="Progress" Type="tinyint" />
+        </EntityType>
+        <EntityContainer Name="DB_CVModelStoreContainer">
+          <EntitySet Name="tbl_About" EntityType="Self.tbl_About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Certificates" EntityType="Self.tbl_Certificates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Education" EntityType="Self.tbl_Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Experience" EntityType="Self.tbl_Experience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Languages" EntityType="Self.tbl_Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Skills" EntityType="Self.tbl_Skills" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_CVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_About">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Certificates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Certificate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tbl_Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Subtitle1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Subtitle2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GNA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Experience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Subtitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Progress" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="DB_CVEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_About" EntityType="Self.tbl_About" />
+          <EntitySet Name="tbl_Certificates" EntityType="Self.tbl_Certificates" />
+          <EntitySet Name="tbl_Contact" EntityType="Self.tbl_Contact" />
+          <EntitySet Name="tbl_Education" EntityType="Self.tbl_Education" />
+          <EntitySet Name="tbl_Experience" EntityType="Self.tbl_Experience" />
+          <EntitySet Name="tbl_Skills" EntityType="Self.tbl_Skills" />
+          <EntitySet Name="tbl_Languages" EntityType="DB_CVModel.tbl_Languages" />
+          <EntitySet Name="tbl_Admin" EntityType="DB_CVModel.tbl_Admin" />
+        </EntityContainer>
+        <EntityType Name="tbl_Languages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Desc1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Progress" Type="Byte" />
+        </EntityType>
+        <EntityType Name="tbl_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_CVModelStoreContainer" CdmEntityContainer="DB_CVEntities3">
+          <EntitySetMapping Name="tbl_About">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_About">
+              <MappingFragment StoreEntitySet="tbl_About">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Certificates">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Certificates">
+              <MappingFragment StoreEntitySet="tbl_Certificates">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Contact">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Contact">
+              <MappingFragment StoreEntitySet="tbl_Contact">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Education">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Education">
+              <MappingFragment StoreEntitySet="tbl_Education">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Subtitle1" ColumnName="Subtitle1" />
+                <ScalarProperty Name="Subtitle2" ColumnName="Subtitle2" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="GNA" ColumnName="GNA" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Experience">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Experience">
+              <MappingFragment StoreEntitySet="tbl_Experience">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Skills">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Skills">
+              <MappingFragment StoreEntitySet="tbl_Skills">
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Languages">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Languages">
+              <MappingFragment StoreEntitySet="tbl_Languages">
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Desc1" ColumnName="Desc1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Admin">
+            <EntityTypeMapping TypeName="DB_CVModel.tbl_Admin">
+              <MappingFragment StoreEntitySet="tbl_Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

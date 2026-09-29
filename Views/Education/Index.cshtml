@@ -1,0 +1,57 @@
+﻿@using MVC_CV.Models.Entity
+@model List<tbl_Education>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Education List</h2>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <a href="/Education/AddEducation/" class="btn btn-primary">Add New Education</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Subtitle</th>
+                                        <th>Date</th>
+                                        <th>Delete</th>
+                                        <th>Update</th>
+                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Subtitle1</td>
+                                            <td>@item.Date</td>
+                                            <td><a href="/Education/DeleteEducation/@item.ID" class="btn btn-danger">Delete</a></td>
+                                            <td><a href="/Education/UpdateEducation/@item.ID" class="btn btn-warning">Update</a></td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

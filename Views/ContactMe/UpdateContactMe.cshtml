@@ -1,0 +1,56 @@
+﻿@model MVC_CV.Models.Entity.tbl_Contact
+
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Update Comment</h2>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form class="form-group" method="post">
+                                    @Html.Label("Comment ID")
+                                    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Comment Name-Surname")
+                                    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Comment Mail")
+                                    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Comment Subject")
+                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Comment Message")
+                                    @Html.TextBoxFor(x => x.Message, new { @class = "form-control" })
+                                    <br />
+                                    @Html.Label("Comment Date")
+                                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                                    <br />
+
+                                    <button class="btn btn-info">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+

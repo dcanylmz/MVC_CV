@@ -1,0 +1,87 @@
+﻿@using MVC_CV.Models.Entity
+@model List<tbl_Skills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    string renk = "";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Skills List</h2>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <a href="/Skills/AddSkill/" class="btn btn-primary">Add New Skill</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered w-75">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">ID</th>
+                                            <th>Skills</th>
+                                            <th>Progress</th>
+                                            <th style="width: 40px">Rate</th>
+                                            <th>Options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Progress >= 0 && x.Progress <= 50)
+                                            {
+                                                renk = "progress-bar bg-danger";
+                                            }
+                                            if (x.Progress >= 51 && x.Progress <= 70)
+                                            {
+                                                renk = "progress-bar bg-warning";
+
+                                            }
+                                            if (x.Progress >= 71 && x.Progress <= 80)
+                                            {
+                                                renk = "progress-bar bg-primary";
+                                            }
+                                            if (x.Progress >= 81 && x.Progress <= 100)
+                                            {
+                                                renk = "progress-bar bg-success";
+                                            }
+                                            <tr>
+                                                <td>@x.ID</td>
+                                                <td>@x.Skills</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@renk" style="width: @x.Progress%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge @renk">@x.Progress%</span></td>
+                                                <td class="mr-0 ">
+                                                    <a href="/Skills/UpdateSkill/@x.ID" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i>&nbsp;Update</a>
+                                                    <a href="/Skills/DeleteSkill/@x.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>&nbsp;Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>
