@@ -1,0 +1,40 @@
+﻿@model MVC_CV.Models.Entity.tbl_Admin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Add New Admin</h2>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form class="form-group" method="post">
+                                    @Html.Label("Username")
+                                    @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @name = "Username", @placeholder = "Username" })
+                                    <br />
+                                    @Html.Label("Password")
+                                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @name= "Password", @placeholder="Password" })
+                                    <br />
+                                    
+                                    <button class="btn btn-info">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
