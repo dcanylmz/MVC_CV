@@ -8,7 +8,6 @@ using MVC_CV.Repositories;
 
 namespace MVC_CV.Controllers
 {
-    [AllowAnonymous]
     public class AdminController : Controller
     {
         GenericRepository<tbl_Admin> repo = new GenericRepository<tbl_Admin>();
